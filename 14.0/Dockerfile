@@ -21,6 +21,7 @@ RUN apt-get update && \
         libssl-dev \
         node-less \
         npm \
+        python3-ldap \
         python3-num2words \
         python3-pdfminer \
         python3-pip \
@@ -36,7 +37,7 @@ RUN apt-get update && \
         python3-xlwt \
         xz-utils
 
-#RUN curl -o wkhtmltox.deb -sSL "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_$TARGETARCH.deb" \
+RUN curl -o wkhtmltox.deb -sSL "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_$TARGETARCH.deb" 
     #&& echo 'ea8277df4297afc507c61122f3c349af142f31e5 wkhtmltox.deb' | sha1sum -c - \
 #    && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
 #    && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
